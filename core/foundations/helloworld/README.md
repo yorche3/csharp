@@ -4,17 +4,27 @@ Implementación de la especificación [01_Hello_World](https://yorche3.github.io
 
 ---
 
-## 📂 Archivos / Files
+## 📂 Archivos y estructura / Files & Structure
 
 | Archivo | Propósito |
 |---------|-----------|
 | [`Program.cs`](Program.cs) | Código fuente: imprime `"Hello, World! from C#!"` en la consola. |
 | [`helloworld.csproj`](helloworld.csproj) | Proyecto .NET — declara el target framework (`net10.0`), output type (`Exe`), y opciones del compilador. |
-| [`README.md`](README.md) | Este archivo. |
+
+**Estructura de directorios esperada:**
+
+```text
+helloworld/
+├── Program.cs            # Código fuente
+├── helloworld.csproj     # Proyecto .NET
+├── README.md             # Este archivo
+├── bin/                  # Compilados (generado por dotnet build/run)
+└── obj/                  # Objetos intermedios (generado por dotnet build/run)
+```
 
 ---
 
-## 🛠️ Enfoque / Approach
+## 🛠️ Enfoque y construcción / Approach & Build
 
 **ES:** Este proyecto usa el **.NET SDK** y sigue el modelo más moderno de C#: **top-level statements** (introducido en C# 9 / .NET 5). No se necesita una clase `Program` explícita ni un método `Main`.
 
@@ -42,7 +52,7 @@ Implementación de la especificación [01_Hello_World](https://yorche3.github.io
 
 ---
 
-## 📄 Archivos clave / Key Files
+## 📄 Archivos de configuración clave / Key Configuration Files
 
 ### `Program.cs`
 
@@ -94,7 +104,7 @@ Console.WriteLine("Hello, World! from C#!");
 
 ---
 
-## 🚀 Compilar y ejecutar / Build & Run
+## 🚀 Compilación y ejecución / Build & Run
 
 ### Requisito: Tener el .NET SDK instalado
 
@@ -129,26 +139,7 @@ Hello, World! from C#!
 
 ---
 
-## 📁 Estructura / Structure
-
-```text
-helloworld/
-├── Program.cs            # Código fuente
-├── helloworld.csproj     # Proyecto .NET
-├── README.md             # Este archivo
-├── bin/                  # Compilados (generado por dotnet build/run)
-└── obj/                  # Objetos intermedios (generado por dotnet build/run)
-```
-
----
-
-### 🌐 Otras implementaciones / Other implementations
-
-Este proyecto también está implementado en otros lenguajes. Explora el [repositorio principal](https://github.com/yorche3/programming_languages) para ver todas las versiones.
-
----
-
-## 📝 Notas / Notes
+## 📝 Notas de implementación / Implementation Notes
 
 - **ES:** El proyecto se creó con `dotnet new console -n helloworld`. La plantilla genera `Program.cs` y `helloworld.csproj` automáticamente.
 - **EN:** The project was created with `dotnet new console -n helloworld`. The template generates `Program.cs` and `helloworld.csproj` automatically.
@@ -156,6 +147,12 @@ Este proyecto también está implementado en otros lenguajes. Explora el [reposi
 - **EN:** Top-level statements (C# 9+) eliminate the need to write `class Program { static void Main() { ... } }`. The compiler generates the boilerplate automatically.
 - **ES:** Los directorios `bin/` y `obj/` son generados por el compilador y no deben versionarse. Ver [`.gitignore`](.gitignore).
 - **EN:** The `bin/` and `obj/` directories are compiler-generated and should not be versioned. See [`.gitignore`](.gitignore).
+
+---
+
+### 🌐 Otras implementaciones / Other implementations
+
+Este proyecto también está implementado en otros lenguajes. Explora el [repositorio principal](https://github.com/yorche3/programming_languages) para ver todas las versiones.
 
 ---
 

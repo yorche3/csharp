@@ -4,14 +4,13 @@ Implementación de la especificación [03_Unit_Test_Calculator](https://yorche3.
 
 ---
 
-## 📂 Archivos / Files
+## 📂 Archivos y estructura / Files & Structure
 
 ### Raíz del proyecto / Project root
 
 | Archivo | Propósito |
 |---------|-----------|
 | [`calculator.slnx`](calculator.slnx) | Archivo de solución .NET — referencia los proyectos `src/` y `tests/`. |
-| [`README.md`](README.md) | Este archivo. |
 
 ### Código fuente / Source (`src/`)
 
@@ -27,9 +26,24 @@ Implementación de la especificación [03_Unit_Test_Calculator](https://yorche3.
 | `tests/UnitTest1.cs` | Pruebas unitarias — 5 tests con atributos `[Fact]` de xUnit. |
 | `tests/Calculator.Tests.csproj` | Proyecto de tests — referencia `src/Calculator.csproj` y paquetes NuGet (xUnit, coverlet). |
 
+**Estructura de directorios esperada:**
+
+```text
+calculator/
+├── calculator.slnx              # Solución .NET
+├── src/
+│   ├── Class1.cs                # Clase con 5 operaciones aritméticas
+│   └── Calculator.csproj        # Proyecto de biblioteca
+├── tests/
+│   ├── UnitTest1.cs             # Tests unitarios (5 tests)
+│   └── Calculator.Tests.csproj  # Proyecto de tests
+├── .gitignore                   # Ignora bin/, obj/
+└── README.md                    # Este archivo
+```
+
 ---
 
-## 🏗️ Enfoque / Approach
+## 🛠️ Enfoque y construcción / Approach & Build
 
 **ES:** Este proyecto usa **xUnit**, el framework de pruebas unitarias moderno para .NET:
 
@@ -55,7 +69,7 @@ calculator.slnx
 
 ---
 
-## 📄 Archivos clave / Key Files
+## 📄 Archivos de configuración clave / Key Configuration Files
 
 ### `src/Class1.cs` — Módulo principal
 
@@ -171,7 +185,7 @@ public class UnitTest1
 
 ---
 
-## 🚀 Compilar y ejecutar / Build & Run
+## 🚀 Compilación y ejecución / Build & Run
 
 ### Requisito: Tener el .NET SDK instalado
 
@@ -213,24 +227,7 @@ Test summary: 5 passed, 0 failed — 100% coverage
 
 ---
 
-## 📁 Estructura / Structure
-
-```text
-calculator/
-├── calculator.slnx              # Solución .NET
-├── src/
-│   ├── Class1.cs                # Clase con 5 operaciones aritméticas
-│   └── Calculator.csproj        # Proyecto de biblioteca
-├── tests/
-│   ├── UnitTest1.cs             # Tests unitarios (5 tests)
-│   └── Calculator.Tests.csproj  # Proyecto de tests
-├── .gitignore                   # Ignora bin/, obj/
-└── README.md                    # Este archivo
-```
-
----
-
-## 🧪 Operaciones / Operations
+## 🧠 Algoritmos / operaciones (según el módulo)
 
 | Función | Implementación | Cumple |
 |---------|---------------|--------|
@@ -242,13 +239,7 @@ calculator/
 
 ---
 
-### 🌐 Otras implementaciones / Other implementations
-
-Este proyecto también está implementado en otros lenguajes. Explora el [repositorio principal](https://github.com/yorche3/programming_languages) para ver todas las versiones.
-
----
-
-## 📝 Notas / Notes
+## 📝 Notas de implementación / Implementation Notes
 
 - **ES:** xUnit descubre automáticamente los tests marcados con `[Fact]`. No es necesario registrarlos manualmente en una suite ni crear un punto de entrada.
 - **EN:** xUnit automatically discovers tests marked with `[Fact]`. No manual registration in a suite or entry point is needed.
@@ -256,6 +247,12 @@ Este proyecto también está implementado en otros lenguajes. Explora el [reposi
 - **EN:** The `multiplication` and `division` functions are implemented with repeated addition/subtraction to comply with the educational specification (no direct `*` or `/` operators).
 - **ES:** Los directorios `bin/` y `obj/` son generados por el compilador y no deben versionarse. Ver [`.gitignore`](.gitignore).
 - **EN:** The `bin/` and `obj/` directories are compiler-generated and should not be versioned. See [`.gitignore`](.gitignore).
+
+---
+
+### 🌐 Otras implementaciones / Other implementations
+
+Este proyecto también está implementado en otros lenguajes. Explora el [repositorio principal](https://github.com/yorche3/programming_languages) para ver todas las versiones.
 
 ---
 

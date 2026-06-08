@@ -6,17 +6,27 @@ Lee un nombre desde la entrada estándar y saluda al usuario.
 
 ---
 
-## 📂 Archivos / Files
+## 📂 Archivos y estructura / Files & Structure
 
 | Archivo | Propósito |
 |---------|-----------|
 | [`Program.cs`](Program.cs) | Código fuente: solicita un nombre al usuario y saluda. |
 | [`hellouser.csproj`](hellouser.csproj) | Proyecto .NET — declara el target framework (`net10.0`) y opciones del compilador. |
-| [`README.md`](README.md) | Este archivo. |
+
+**Estructura de directorios esperada:**
+
+```text
+hellouser/
+├── Program.cs            # Código fuente
+├── hellouser.csproj      # Proyecto .NET
+├── README.md             # Este archivo
+├── bin/                  # Compilados (generado por dotnet build/run)
+└── obj/                  # Objetos intermedios (generado por dotnet build/run)
+```
 
 ---
 
-## 🛠️ Enfoque / Approach
+## 🛠️ Enfoque y construcción / Approach & Build
 
 **ES:** A diferencia de `helloworld` (que usa top-level statements), este proyecto usa la **estructura clásica** de C#: clase `Program`, método `Main` estático, `namespace` explícito y `using System;` manual. Esto permite apreciar ambos estilos de programación C#.
 
@@ -38,7 +48,7 @@ The new concepts compared to `helloworld` are:
 
 ---
 
-## 📄 Archivos clave / Key Files
+## 📄 Archivos de configuración clave / Key Configuration Files
 
 ### `Program.cs`
 
@@ -107,7 +117,7 @@ namespace HelloUser
 
 ---
 
-## 🚀 Compilar y ejecutar / Build & Run
+## 🚀 Compilación y ejecución / Build & Run
 
 ### Requisito: Tener el .NET SDK instalado
 
@@ -133,26 +143,7 @@ Hello, Ada!
 
 ---
 
-## 📁 Estructura / Structure
-
-```text
-hellouser/
-├── Program.cs            # Código fuente
-├── hellouser.csproj      # Proyecto .NET
-├── README.md             # Este archivo
-├── bin/                  # Compilados (generado por dotnet build/run)
-└── obj/                  # Objetos intermedios (generado por dotnet build/run)
-```
-
----
-
-### 🌐 Otras implementaciones / Other implementations
-
-Este proyecto también está implementado en otros lenguajes. Explora el [repositorio principal](https://github.com/yorche3/programming_languages) para ver todas las versiones.
-
----
-
-## 📝 Notas / Notes
+## 📝 Notas de implementación / Implementation Notes
 
 - **ES:** Este proyecto usa la estructura clásica (`namespace`, `class`, `Main`) a diferencia de `helloworld` que usa top-level statements. Ambos estilos son válidos en C# 10+.
 - **EN:** This project uses the classic structure (`namespace`, `class`, `Main`) unlike `helloworld` which uses top-level statements. Both styles are valid in C# 10+.
@@ -160,6 +151,12 @@ Este proyecto también está implementado en otros lenguajes. Explora el [reposi
 - **EN:** String interpolation with `$"..."` is a C# 6+ feature that allows embedding expressions inside string literals.
 - **ES:** Los directorios `bin/` y `obj/` son generados por el compilador y no deben versionarse. Ver [`.gitignore`](.gitignore).
 - **EN:** The `bin/` and `obj/` directories are compiler-generated and should not be versioned. See [`.gitignore`](.gitignore).
+
+---
+
+### 🌐 Otras implementaciones / Other implementations
+
+Este proyecto también está implementado en otros lenguajes. Explora el [repositorio principal](https://github.com/yorche3/programming_languages) para ver todas las versiones.
 
 ---
 

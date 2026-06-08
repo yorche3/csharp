@@ -4,24 +4,13 @@ Implementación de la especificación [04_Numbers](https://yorche3.github.io/pro
 
 Tres enfoques de implementación para los mismos 5 algoritmos: **recursivo directo**, **recursivo con acumulador** e **iterativo**.
 
-> **ES:** C# **no tiene TCO (Tail Call Optimization)** garantizado. El compilador de C# puede optimizar algunos casos en Release mode (x64), pero no es una garantía del lenguaje. Por lo tanto, los métodos con acumulador (`Acc`) son **puramente educativos**.
->
-> Sin embargo, en el caso de `fibonacci`, el enfoque con acumulador reduce el número de llamadas recursivas de **O(2ⁿ)** a **O(n)**, demostrando una mejora algorítmica significativa incluso sin TCO.
->
-> **EN:** C# **does not have guaranteed TCO (Tail Call Optimization)**. The C# compiler may optimize some cases in Release mode (x64), but it is not a language guarantee. Therefore, accumulator methods (`Acc`) are **purely educational**.
->
-> However, in the case of `fibonacci`, the accumulator approach reduces the number of recursive calls from **O(2ⁿ)** to **O(n)**, demonstrating a significant algorithmic improvement even without TCO.
-
----
-
-## 📂 Archivos / Files
+## 📂 Archivos y estructura / Files & Structure
 
 ### Raíz del proyecto / Project root
 
 | Archivo | Propósito |
 |---------|-----------|
 | [`numbers.slnx`](numbers.slnx) | Archivo de solución .NET — referencia los proyectos `src/` y `test/`. |
-| [`README.md`](README.md) | Este archivo. |
 | [`.gitignore`](.gitignore) | Ignora `bin/`, `obj/`, `.vs/`, etc. |
 
 ### Código fuente / Source (`src/`)
@@ -39,35 +28,44 @@ Tres enfoques de implementación para los mismos 5 algoritmos: **recursivo direc
 | `test/NumbersIterativeTests.cs` | 5 tests para el enfoque iterativo |
 | `test/Numbers.Test.csproj` | Proyecto de tests — referencia `src/Numbers/Numbers.csproj` + paquetes NuGet (xUnit). |
 
-> **ES:** No hay tests separados para el enfoque con acumulador porque C# no tiene TCO garantizado. Los métodos `Acc` se prueban **implícitamente** al ejecutar las funciones públicas (ej: `FactorialAcc(5)` llama al helper `FactorialHelp`).
->
-> **EN:** There are no separate tests for the accumulator approach because C# lacks guaranteed TCO. The `Acc` methods are **implicitly tested** when running the public functions (e.g., `FactorialAcc(5)` calls the helper `FactorialHelp`).
+**Estructura de directorios esperada:**
 
----
+```text
+numbers/
+├── numbers.slnx                      # Solución .NET
+├── src/
+│   └── Numbers/
+│       ├── Numbers.cs                # Clase con 15 funciones + 4 helpers private
+│       └── Numbers.csproj            # Proyecto de biblioteca
+├── test/
+│   ├── NumbersRecursiveTests.cs      # Tests recursivos (5)
+│   ├── NumbersIterativeTests.cs      # Tests iterativos (5)
+│   └── Numbers.Test.csproj           # Proyecto de tests
+├── .gitignore                        # Ignora bin/, obj/
+└── README.md                         # Este archivo
+```
 
-## 📐 Sobre la estructura / About the structure
+**Nota sobre la estructura / Note about the structure:**
 
-> **ES:** La estructura de este proyecto difiere de la especificada en la [documentación general](https://yorche3.github.io/programming_languages/core/foundations/04_Numbers/):
+> **ES:** La estructura de este proyecto difiere de la especificada en la [documentación general](https://yorche3.github.io/programming_languages/core/foundations/04_Numbers/). Los motivos:
 >
 > | Especificación | Este proyecto | Motivo |
 > |----------------|---------------|--------|
 > | `unit_test/numbers/` | `numbers/` (raíz directa) | Al crearse con `dotnet new`, el proyecto `numbers` se generó al mismo nivel que `unit_test/`, no dentro de él |
-> | `src/numbers.cs` | `src/Numbers/Numbers.cs` | El proyecto .NET se creó con `dotnet new classlib -n Numbers -o src/Numbers`, que anida el archivo dentro de una subcarpeta con el nombre del proyecto |
-> | Clase `Numbers` | Clase `NumbersImpl` | La clase se llamó `NumbersImpl` para evitar conflicto de nombres con el namespace `Numbers` |
-> | `GreatestCommonDivisor` | `LargestCommonDivisor` | Se usó `Largest` en lugar de `Greatest` por elección de nomenclatura |
+> | `src/numbers.cs` | `src/Numbers/Numbers.cs` | `dotnet new classlib -n Numbers -o src/Numbers` anida el archivo dentro de subcarpeta |
+> | Clase `Numbers` | Clase `NumbersImpl` | Para evitar conflicto con el namespace `Numbers` |
 >
-> **EN:** The structure of this project differs from the one specified in the [general documentation](https://yorche3.github.io/programming_languages/core/foundations/04_Numbers/):
+> **EN:** The structure of this project differs from the one specified in the [general documentation](https://yorche3.github.io/programming_languages/core/foundations/04_Numbers/). Reasons:
 >
 > | Specification | This project | Reason |
 > |---------------|--------------|--------|
 > | `unit_test/numbers/` | `numbers/` (direct root) | When created with `dotnet new`, the `numbers` project was generated at the same level as `unit_test/`, not inside it |
-> | `src/numbers.cs` | `src/Numbers/Numbers.cs` | The .NET project was created with `dotnet new classlib -n Numbers -o src/Numbers`, which nests the file inside a subfolder with the project name |
-> | Class `Numbers` | Class `NumbersImpl` | The class was named `NumbersImpl` to avoid name conflict with the `Numbers` namespace |
-> | `GreatestCommonDivisor` | `LargestCommonDivisor` | `Largest` was used instead of `Greatest` by naming choice |
+> | `src/numbers.cs` | `src/Numbers/Numbers.cs` | `dotnet new classlib -n Numbers -o src/Numbers` nests the file inside a subfolder |
+> | Class `Numbers` | Class `NumbersImpl` | To avoid conflict with the `Numbers` namespace |
 
 ---
 
-## 🏗️ Enfoque / Approach
+## 🛠️ Enfoque y construcción / Approach & Build
 
 **ES:** Sigue el mismo patrón que [`calculator`](../unit_test/calculator/): una solución `.slnx` que agrupa un proyecto de biblioteca (`src/`) y uno de tests (`test/`) con xUnit.
 
@@ -91,7 +89,7 @@ The 15 functions are organized into 3 groups by approach:
 
 ---
 
-## 📄 Archivos clave / Key Files
+## 📄 Archivos de configuración clave / Key Configuration Files
 
 ### `src/Numbers/Numbers.cs` — Implementación
 
@@ -181,7 +179,7 @@ public void TestFibonacciIter()
 
 ---
 
-## 🚀 Compilar y ejecutar / Build & Run
+## 🚀 Compilación y ejecución / Build & Run
 
 ### Requisito: Tener el .NET SDK instalado
 
@@ -225,26 +223,9 @@ Test summary: 10 passed, 0 failed
 
 ---
 
-## 📁 Estructura / Structure
-
-```text
-numbers/
-├── numbers.slnx                      # Solución .NET
-├── src/
-│   └── Numbers/
-│       ├── Numbers.cs                # Clase con 15 funciones + 4 helpers private
-│       └── Numbers.csproj            # Proyecto de biblioteca
-├── test/
-│   ├── NumbersRecursiveTests.cs      # Tests recursivos (5)
-│   ├── NumbersIterativeTests.cs      # Tests iterativos (5)
-│   └── Numbers.Test.csproj           # Proyecto de tests
-├── .gitignore                        # Ignora bin/, obj/
-└── README.md                         # Este archivo
-```
-
 ---
 
-## 🧪 Algoritmos / Algorithms
+## 🧠 Algoritmos / operaciones (según el módulo)
 
 ### 3 enfoques × 5 algoritmos = 15 funciones / 10 tests
 
@@ -267,10 +248,28 @@ Este proyecto también está implementado en otros lenguajes. Explora el [reposi
 
 ---
 
-## 📝 Notas / Notes
+## 📝 Notas de implementación / Implementation Notes
 
-- **ES:** C# no tiene TCO (Tail Call Optimization) garantizado por el lenguaje. El compilador JIT de RyuJIT (x64) puede aplicar TCO en algunos escenarios con optimizaciones habilitadas, pero no es confiable ni está especificado en el lenguaje.
-- **EN:** C# does not have guaranteed TCO (Tail Call Optimization) specified by the language. The RyuJIT (x64) JIT compiler may apply TCO in some scenarios with optimizations enabled, but it is not reliable nor specified in the language.
+### 🔁 Sobre recursión con acumulador y Tail Call Optimization (TCO) / On recursion with accumulator and Tail Call Optimization (TCO)
+
+**ES:**
+
+Tail recursion ocurre cuando la llamada recursiva es la última acción que ejecuta una función/método; después de la llamada no hay más instrucciones, la función devuelve el resultado de la llamada recursiva. La recursión con acumulador consigue esto pasando el estado previo como parámetro a cada llamada, sin dejar trabajo pendiente en la pila.
+
+**C# no garantiza TCO.** El compilador JIT de RyuJIT (x64) puede aplicar TCO en algunos escenarios con optimizaciones habilitadas, pero no es confiable ni está especificado en el lenguaje. Por lo tanto, los métodos con acumulador (`Acc`) se conservan únicamente con fines educativos: sirven como puente conceptual entre la recursión directa (más cercana a la definición matemática) y la versión iterativa (más eficiente).
+
+Sin embargo, en el caso de `fibonacci`, el enfoque con acumulador reduce el número de llamadas recursivas de **O(2ⁿ)** a **O(n)**, demostrando una mejora algorítmica significativa incluso sin TCO.
+
+**EN:**
+
+Tail recursion occurs when the recursive call is the last action that runs a function/method; after the call there are no more instructions, the function returns the result of the recursive call. Recursion with accumulator achieves this by passing the previous state as a parameter to each call, without leaving any pending work on the stack.
+
+**C# does not guarantee TCO.** The RyuJIT (x64) JIT compiler may apply TCO in some scenarios with optimizations enabled, but it is not reliable nor specified in the language. Therefore, accumulator methods (`Acc`) are preserved only for educational purposes: they serve as a conceptual bridge between the direct recursive (closer to mathematical definition) and the iterative version (more efficient).
+
+However, in the case of `fibonacci`, the accumulator approach reduces the number of recursive calls from **O(2ⁿ)** to **O(n)**, demonstrating a significant algorithmic improvement even without TCO.
+
+---
+
 - **ES:** Los helpers son `private static` — encapsulados dentro de la clase, no visibles externamente. Es el equivalente C# de las funciones `static` en C.
 - **EN:** Helpers are `private static` — encapsulated within the class, not externally visible. This is the C# equivalent of `static` functions in C.
 - **ES:** En `fibonacci`, el acumulador reduce las llamadas de O(2ⁿ) a O(n). Aun sin TCO, evita el desbordamiento de pila para valores grandes que la versión recursiva directa no puede manejar.
