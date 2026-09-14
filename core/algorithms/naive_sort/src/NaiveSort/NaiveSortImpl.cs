@@ -5,7 +5,7 @@ public static class NaiveSortImpl
     // Selection sort: repeatedly finds the minimum element from the unsorted part and puts it at the beginning.
     // Input: an arr of integers.
     // Output: the sorted arr in ascending order.
-    public static int[] SelectionSort(int[] arr)
+    public static int[]? SelectionSort(int[]? arr)
     {
         if (arr == null || arr.Length <= 1)
         {
@@ -36,7 +36,7 @@ public static class NaiveSortImpl
     // Bubble sort: repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
     // Input: an arr of integers.
     // Output: the sorted arr in ascending order.
-    public static int[] BubbleSort(int[] arr)
+    public static int[]? BubbleSort(int[]? arr)
     {
         if (arr == null || arr.Length <= 1)
         {
@@ -67,7 +67,7 @@ public static class NaiveSortImpl
     // Insertion sort: builds the sorted arr one item at a time by repeatedly taking the next element and inserting it into the correct position.
     // Input: an arr of integers.
     // Output: the sorted arr in ascending order.
-    public static int[] InsertionSort(int[] arr)
+    public static int[]? InsertionSort(int[]? arr)
     {
         if (arr == null || arr.Length <= 1)
         {
