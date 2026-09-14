@@ -46,6 +46,7 @@ dotnet test <solución>.slnx
 | Módulo | Descripción |
 |--------|-------------|
 | [`core/foundations/`](core/foundations/) | **Fase 0 — Fundamentos**: `helloworld`, `hellouser`, `unit_test/calculator`, `numbers` |
+| [`core/algorithms/`](core/algorithms/) | **Fase 1 — Algoritmos Puros**: `naive_sort` |
 
 ---
 
@@ -67,6 +68,10 @@ dotnet test calculator.slnx
 # Numbers Tests
 cd core/foundations/numbers
 dotnet test numbers.slnx
+
+# Naive Sort Tests
+cd core/algorithms/naive_sort
+dotnet test NaiveSort.slnx
 ```
 
 ---
