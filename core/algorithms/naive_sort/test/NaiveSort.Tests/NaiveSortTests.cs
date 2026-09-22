@@ -33,15 +33,20 @@ public class NaiveSortTests
         _ => expected.SequenceEqual(actual),
     };
 
+    // Each case works on a copy: the three algorithms sort in place and the
+    // fixtures are shared static arrays, so passing them directly would leave
+    // the following cases with an already sorted input.
+    private static int[] Copy(int[] input) => (int[])input.Clone();
+
     private static void AssertSortsAllCases(Func<int[]?, int[]?> sort, string algorithmName)
     {
-        Assert.True(ArraysMatch(StandardOutput, sort(StandardInput)), $"{algorithmName} should sort an unsorted array");
-        Assert.True(ArraysMatch(SortedOutput, sort(SortedInput)), $"{algorithmName} should keep an already sorted array sorted");
-        Assert.True(ArraysMatch(ReverseOutput, sort(ReverseInput)), $"{algorithmName} should sort a reverse ordered array");
-        Assert.True(ArraysMatch(IdenticalOutput, sort(IdenticalInput)), $"{algorithmName} should sort identical elements");
-        Assert.True(ArraysMatch(NegativeOutput, sort(NegativeInput)), $"{algorithmName} should sort an array with negative numbers");
-        Assert.True(ArraysMatch(SingleOutput, sort(SingleInput)), $"{algorithmName} should sort a single element array");
-        Assert.True(ArraysMatch(EmptyOutput, sort(EmptyInput)), $"{algorithmName} should sort an empty array");
+        Assert.True(ArraysMatch(StandardOutput, sort(Copy(StandardInput))), $"{algorithmName} should sort an unsorted array");
+        Assert.True(ArraysMatch(SortedOutput, sort(Copy(SortedInput))), $"{algorithmName} should keep an already sorted array sorted");
+        Assert.True(ArraysMatch(ReverseOutput, sort(Copy(ReverseInput))), $"{algorithmName} should sort a reverse ordered array");
+        Assert.True(ArraysMatch(IdenticalOutput, sort(Copy(IdenticalInput))), $"{algorithmName} should sort identical elements");
+        Assert.True(ArraysMatch(NegativeOutput, sort(Copy(NegativeInput))), $"{algorithmName} should sort an array with negative numbers");
+        Assert.True(ArraysMatch(SingleOutput, sort(Copy(SingleInput))), $"{algorithmName} should sort a single element array");
+        Assert.True(ArraysMatch(EmptyOutput, sort(Copy(EmptyInput))), $"{algorithmName} should sort an empty array");
         Assert.True(ArraysMatch(NullOutput, sort(NullInput)), $"{algorithmName} should return the failure indicator for a null array");
     }
 
