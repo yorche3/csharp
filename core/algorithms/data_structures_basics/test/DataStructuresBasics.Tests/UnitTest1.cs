@@ -13,7 +13,8 @@ public class DataStructuresBasicsTests
     private const int StackTopValue = 30;
     private const int ReusedStackValue = 40;
     private const int ReusedQueueValue = 40;
-    private const int FailureValue = 0;
+    // Failure indicator: a sentinel of the returned type, as the contract does.
+    private const int FailureValue = -1;
 
     [Fact]
     public void TestNodeOperations()

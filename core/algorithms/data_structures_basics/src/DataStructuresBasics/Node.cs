@@ -5,7 +5,8 @@ public sealed class Node
 
     public Node(int value)
     {
-        // Initialize the node with the given value.
+        Value = value;
+        Next = null;
     }
 
     public int Value { get; }
