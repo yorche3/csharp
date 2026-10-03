@@ -1,0 +1,12 @@
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/obj/Debug/net10.0/DataStructuresBasics.GeneratedMSBuildEditorConfig.editorconfig
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/obj/Debug/net10.0/DataStructuresBasics.AssemblyInfoInputs.cache
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/obj/Debug/net10.0/DataStructuresBasics.AssemblyInfo.cs
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/obj/Debug/net10.0/DataStructuresBasics.csproj.CoreCompileInputs.cache
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/obj/Debug/net10.0/DataStructuresBasics.sourcelink.json
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/bin/Debug/net10.0/DataStructuresBasics.deps.json
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/bin/Debug/net10.0/DataStructuresBasics.dll
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/bin/Debug/net10.0/DataStructuresBasics.pdb
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/obj/Debug/net10.0/DataStructuresBasics.dll
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/obj/Debug/net10.0/refint/DataStructuresBasics.dll
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/obj/Debug/net10.0/DataStructuresBasics.pdb
+/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/obj/Debug/net10.0/ref/DataStructuresBasics.dll

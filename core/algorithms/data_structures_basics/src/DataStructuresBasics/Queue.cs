@@ -1,6 +1,6 @@
 namespace DataStructuresBasics;
 
-public class Queue
+public sealed class Queue
 {
     public Queue()
     {
@@ -10,14 +10,14 @@ public class Queue
     {
     }
 
-    public int? Dequeue()
+    public int Dequeue()
     {
-        return null;
+        return default;
     }
 
-    public int? Peek()
+    public int Peek()
     {
-        return null;
+        return default;
     }
 
     public bool IsEmpty()

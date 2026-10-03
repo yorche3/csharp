@@ -1,6 +1,6 @@
 namespace DataStructuresBasics;
 
-public class Stack
+public sealed class Stack
 {
     public Stack()
     {
@@ -10,14 +10,14 @@ public class Stack
     {
     }
 
-    public int? Pop()
+    public int Pop()
     {
-        return null;
+        return default;
     }
 
-    public int? Peek()
+    public int Peek()
     {
-        return null;
+        return default;
     }
 
     public bool IsEmpty()

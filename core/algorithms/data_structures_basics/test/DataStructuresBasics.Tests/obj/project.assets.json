@@ -393,6 +393,16 @@
         "build": {
           "build/net8.0/xunit.runner.visualstudio.props": {}
         }
+      },
+      "DataStructuresBasics/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v10.0",
+        "compile": {
+          "bin/placeholder/DataStructuresBasics.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataStructuresBasics.dll": {}
+        }
       }
     }
   },
@@ -903,10 +913,16 @@
         "xunit.runner.visualstudio.3.1.4.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "DataStructuresBasics/1.0.0": {
+      "type": "project",
+      "path": "../../src/DataStructuresBasics/DataStructuresBasics.csproj",
+      "msbuildProject": "../../src/DataStructuresBasics/DataStructuresBasics.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net10.0": [
+      "DataStructuresBasics >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 17.14.1",
       "coverlet.collector >= 6.0.4",
       "xunit >= 2.9.3",
@@ -938,7 +954,11 @@
       "frameworks": {
         "net10.0": {
           "targetAlias": "net10.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/DataStructuresBasics.csproj": {
+              "projectPath": "/home/yorche3/programming_languages/csharp/core/algorithms/data_structures_basics/src/DataStructuresBasics/DataStructuresBasics.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -1,6 +1,6 @@
 namespace DataStructuresBasics;
 
-public class LinkedList
+public sealed class LinkedList
 {
     public LinkedList()
     {
