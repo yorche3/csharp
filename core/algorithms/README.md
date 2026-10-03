@@ -11,6 +11,7 @@ Los módulos de esta fase usan **indicadores de fallo compatibles con el lenguaj
 | Módulo | Especificación | Enfoque | Tests | Estado |
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `dotnet test` + **xUnit** (solución `.slnx`) | 3 | ✅ |
+| [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `dotnet test` + **xUnit** (solución `.slnx`) | 4 | ✅ |
 
 ---
 
@@ -18,17 +19,31 @@ Los módulos de esta fase usan **indicadores de fallo compatibles con el lenguaj
 
 ```text
 algorithms/
-└── naive_sort/                       # 05_Naive_Sort
-    ├── NaiveSort.slnx                # Solución .NET
+├── naive_sort/                       # 05_Naive_Sort
+│   ├── NaiveSort.slnx                # Solución .NET
+│   ├── src/
+│   │   └── NaiveSort/
+│   │       ├── NaiveSortImpl.cs      # selection_sort, bubble_sort, insertion_sort
+│   │       └── NaiveSort.csproj
+│   ├── test/
+│   │   └── NaiveSort.Tests/
+│   │       ├── NaiveSortTests.cs     # 3 tests (uno por algoritmo)
+│   │       └── NaiveSort.Tests.csproj
+│   ├── .gitignore
+│   └── README.md
+└── data_structures_basics/           # 06_Data_Structures_Basics
+    ├── DataStructuresBasics.slnx     # Solución .NET
     ├── src/
-    │   └── NaiveSort/
-    │       ├── NaiveSortImpl.cs      # selection_sort, bubble_sort, insertion_sort
-    │       └── NaiveSort.csproj
+    │   └── DataStructuresBasics/
+    │       ├── Node.cs               # Tipo Node compartido
+    │       ├── LinkedList.cs         # Lista enlazada
+    │       ├── Stack.cs              # Pila (Stack) LIFO
+    │       ├── Queue.cs              # Cola (Queue) FIFO
+    │       └── DataStructuresBasics.csproj
     ├── test/
-    │   └── NaiveSort.Tests/
-    │       ├── NaiveSortTests.cs     # 3 tests (uno por algoritmo)
-    │       └── NaiveSort.Tests.csproj
-    ├── .gitignore
+    │   └── DataStructuresBasics.Tests/
+    │       ├── UnitTest1.cs          # 4 tests xUnit
+    │       └── DataStructuresBasics.Tests.csproj
     └── README.md
 ```
 
@@ -53,6 +68,9 @@ algorithms/
 ```bash
 # Naive Sort Tests
 cd naive_sort && dotnet test NaiveSort.slnx
+
+# Data Structures Basics Tests
+cd data_structures_basics && dotnet test DataStructuresBasics.slnx
 ```
 
 ---
