@@ -8,14 +8,14 @@ Implementación de la especificación [01_Hello_World](https://yorche3.github.io
 
 | Archivo | Propósito |
 |---------|-----------|
-| [`Program.cs`](Program.cs) | Código fuente: imprime `"Hello, World! from C#!"` en la consola. |
+| [`HelloWorld.cs`](HelloWorld.cs) | Código fuente: imprime `"Hello, World! from C#!"` en la consola. |
 | [`helloworld.csproj`](helloworld.csproj) | Proyecto .NET — declara el target framework (`net10.0`), output type (`Exe`), y opciones del compilador. |
 
 **Estructura de directorios esperada:**
 
 ```text
 helloworld/
-├── Program.cs            # Código fuente
+├── HelloWorld.cs            # Código fuente
 ├── helloworld.csproj     # Proyecto .NET
 ├── README.md             # Este archivo
 ├── bin/                  # Compilados (generado por dotnet build/run)
@@ -39,7 +39,7 @@ helloworld/
 > | Especificación | Este proyecto | Motivo |
 > |----------------|---------------|--------|
 > | `hello_world/` | `helloworld/` | El nombre del proyecto .NET no admite guiones bajos por convención de nomenclatura de ensamblados |
-> | `hello_world.cs` | `Program.cs` | .NET SDK genera `Program.cs` por defecto al crear un proyecto con `dotnet new console` |
+> | `hello_world.cs` | `HelloWorld.cs` | .NET SDK genera `HelloWorld.cs` por defecto al crear un proyecto con `dotnet new console` |
 > | — | `helloworld.csproj` | Archivo de proyecto .NET con configuración del SDK |
 >
 > **EN:** The `01_Hello_World.md` specification defines underscore names (`hello_world`), but .NET tools use different conventions:
@@ -47,14 +47,14 @@ helloworld/
 > | Specification | This project | Reason |
 > |---------------|--------------|--------|
 > | `hello_world/` | `helloworld/` | .NET project names don't use underscores by assembly naming convention |
-> | `hello_world.cs` | `Program.cs` | .NET SDK generates `Program.cs` by default when creating a project with `dotnet new console` |
+> | `hello_world.cs` | `HelloWorld.cs` | .NET SDK generates `HelloWorld.cs` by default when creating a project with `dotnet new console` |
 > | — | `helloworld.csproj` | .NET project file with SDK configuration |
 
 ---
 
 ## 📄 Archivos de configuración clave / Key Configuration Files
 
-### `Program.cs`
+### `HelloWorld.cs`
 
 **ES:** Código fuente en C# usando top-level statements. El compilador envuelve automáticamente este código en un método `Main` implícito dentro de una clase `Program` generada.
 
@@ -141,8 +141,8 @@ Hello, World! from C#!
 
 ## 📝 Notas de implementación / Implementation Notes
 
-- **ES:** El proyecto se creó con `dotnet new console -n helloworld`. La plantilla genera `Program.cs` y `helloworld.csproj` automáticamente.
-- **EN:** The project was created with `dotnet new console -n helloworld`. The template generates `Program.cs` and `helloworld.csproj` automatically.
+- **ES:** El proyecto se creó con `dotnet new console -n helloworld`. La plantilla genera `HelloWorld.cs` y `helloworld.csproj` automáticamente.
+- **EN:** The project was created with `dotnet new console -n helloworld`. The template generates `HelloWorld.cs` and `helloworld.csproj` automatically.
 - **ES:** Los top-level statements (C# 9+) eliminan la necesidad de escribir `class Program { static void Main() { ... } }`. El compilador genera el boilerplate automáticamente.
 - **EN:** Top-level statements (C# 9+) eliminate the need to write `class Program { static void Main() { ... } }`. The compiler generates the boilerplate automatically.
 - **ES:** Los directorios `bin/` y `obj/` son generados por el compilador y no deben versionarse. Ver [`.gitignore`](.gitignore).
