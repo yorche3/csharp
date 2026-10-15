@@ -10,14 +10,14 @@ Lee un nombre desde la entrada estándar y saluda al usuario.
 
 | Archivo | Propósito |
 |---------|-----------|
-| [`Program.cs`](Program.cs) | Código fuente: solicita un nombre al usuario y saluda. |
+| [`HelloUser.cs`](HelloUser.cs) | Código fuente: solicita un nombre al usuario y saluda. |
 | [`hellouser.csproj`](hellouser.csproj) | Proyecto .NET — declara el target framework (`net10.0`) y opciones del compilador. |
 
 **Estructura de directorios esperada:**
 
 ```text
 hellouser/
-├── Program.cs            # Código fuente
+├── HelloUser.cs            # Código fuente
 ├── hellouser.csproj      # Proyecto .NET
 ├── README.md             # Este archivo
 ├── bin/                  # Compilados (generado por dotnet build/run)
@@ -50,7 +50,7 @@ The new concepts compared to `helloworld` are:
 
 ## 📄 Archivos de configuración clave / Key Configuration Files
 
-### `Program.cs`
+### `HelloUser.cs`
 
 **ES:** El flujo del programa es:
 
