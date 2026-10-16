@@ -3,9 +3,9 @@ using Calculator;
 
 namespace Calculator.Tests;
 
-public class UnitTest1
+public class CalculatorTests
 {
-    Class1 calculator = new Class1();
+    Calculator calculator = new Calculator();
 
     [Fact]
     public void TestAddition()

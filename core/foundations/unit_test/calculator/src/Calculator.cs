@@ -1,6 +1,6 @@
 ﻿namespace Calculator;
 
-public class Class1
+public class Calculator
 {
     public int Addition(int a, int b) => a + b;
     public int Subtraction(int a, int b) => a - b;
