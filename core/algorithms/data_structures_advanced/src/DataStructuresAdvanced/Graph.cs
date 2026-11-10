@@ -6,8 +6,6 @@ public sealed class Graph
     private int _vertexTotal;
     private int _edges;
 
-    public Graph() { }
-
     private GraphNode? FindVertex(int label)
     {
         GraphNode? current = _vertices;
@@ -62,7 +60,7 @@ public sealed class Graph
         return source.Neighbors.ToArray();                // copia independiente
     }
 
-    public bool IsEmpty     => _vertexTotal == 0;
-    public int VertexCount  => _vertexTotal;
-    public int EdgeCount    => _edges;
+    public bool IsEmpty => _vertexTotal == 0;
+    public int VertexCount => _vertexTotal;
+    public int EdgeCount => _edges;
 }

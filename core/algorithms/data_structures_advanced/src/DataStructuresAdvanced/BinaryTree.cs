@@ -5,44 +5,45 @@ public sealed class BinaryTree
     private TreeNode? _root;
     private int _count;
 
-    public BinaryTree() { }
-
     public bool Insert(int value)
     {
         if (_root is null)
         {
-            _root = new TreeNode(value);
-            _count++;
+            _root = CreateNode(value);
             return true;
         }
         TreeNode current = _root;
         while (true)
         {
+            if (value == current.Value)
+            {
+                return true;   // duplicado idempotente
+            }
             if (value < current.Value)
             {
                 if (current.Left is null)
                 {
-                    current.Left = new TreeNode(value);
-                    _count++;
+                    current.Left = CreateNode(value);
                     return true;
                 }
                 current = current.Left;
             }
-            else if (value > current.Value)
+            else
             {
                 if (current.Right is null)
                 {
-                    current.Right = new TreeNode(value);
-                    _count++;
+                    current.Right = CreateNode(value);
                     return true;
                 }
                 current = current.Right;
             }
-            else
-            {
-                return true;   // duplicado idempotente
-            }
         }
+    }
+
+    private TreeNode CreateNode(int value)
+    {
+        _count++;
+        return new TreeNode(value);
     }
 
     public bool Contains(int value)
@@ -57,5 +58,5 @@ public sealed class BinaryTree
     }
 
     public bool IsEmpty => _count == 0;
-    public int Size     => _count;
+    public int Size => _count;
 }
