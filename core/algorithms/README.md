@@ -12,6 +12,7 @@ Los módulos de esta fase usan **indicadores de fallo compatibles con el lenguaj
 |--------|---------------|---------|:-----:|:------:|
 | [`naive_sort/`](naive_sort/) | [05_Naive_Sort](https://yorche3.github.io/programming_languages/core/algorithms/05_Naive_Sort/) | `dotnet test` + **xUnit** (solución `.slnx`) | 3 | ✅ |
 | [`data_structures_basics/`](data_structures_basics/) | [06_Data_Structures_Basics](https://yorche3.github.io/programming_languages/core/algorithms/06_Data_Structures_Basics/) | `dotnet test` + **xUnit** (solución `.slnx`) | 4 | ✅ |
+| [`data_structures_advanced/`](data_structures_advanced/) | [07_Data_Structures_Advanced](https://yorche3.github.io/programming_languages/core/algorithms/07_Data_Structures_Advanced/) | `dotnet test` + **xUnit** (solución `.slnx`) | 3 | ✅ |
 
 ---
 
@@ -31,19 +32,35 @@ algorithms/
 │   │       └── NaiveSort.Tests.csproj
 │   ├── .gitignore
 │   └── README.md
-└── data_structures_basics/           # 06_Data_Structures_Basics
-    ├── DataStructuresBasics.slnx     # Solución .NET
+├── data_structures_basics/           # 06_Data_Structures_Basics
+│   ├── DataStructuresBasics.slnx     # Solución .NET
+│   ├── src/
+│   │   └── DataStructuresBasics/
+│   │       ├── Node.cs               # Tipo Node compartido
+│   │       ├── LinkedList.cs         # Lista enlazada
+│   │       ├── Stack.cs              # Pila (Stack) LIFO
+│   │       ├── Queue.cs              # Cola (Queue) FIFO
+│   │       └── DataStructuresBasics.csproj
+│   ├── test/
+│   │   └── DataStructuresBasics.Tests/
+│   │       ├── UnitTest1.cs          # 4 tests xUnit
+│   │       └── DataStructuresBasics.Tests.csproj
+│   └── README.md
+└── data_structures_advanced/         # 07_Data_Structures_Advanced
+    ├── DataStructuresAdvanced.slnx   # Solución .NET
     ├── src/
-    │   └── DataStructuresBasics/
-    │       ├── Node.cs               # Tipo Node compartido
-    │       ├── LinkedList.cs         # Lista enlazada
-    │       ├── Stack.cs              # Pila (Stack) LIFO
-    │       ├── Queue.cs              # Cola (Queue) FIFO
-    │       └── DataStructuresBasics.csproj
+    │   └── DataStructuresAdvanced/
+    │       ├── BinaryTree.cs         # BinaryTree (BST)
+    │       ├── Graph.cs              # Graph no dirigido
+    │       ├── GraphNode.cs          # Nodo de grafo con lista de adyacencia
+    │       ├── Node.cs               # Tipo Node de conveniencia
+    │       ├── TreeNode.cs           # Nodo de árbol binario
+    │       └── DataStructuresAdvanced.csproj
     ├── test/
-    │   └── DataStructuresBasics.Tests/
-    │       ├── UnitTest1.cs          # 4 tests xUnit
-    │       └── DataStructuresBasics.Tests.csproj
+    │   └── DataStructuresAdvanced.Tests/
+    │       ├── DataStructuresAdvancedTests.cs # 3 tests xUnit
+    │       └── DataStructuresAdvanced.Tests.csproj
+    ├── .gitignore
     └── README.md
 ```
 
@@ -71,6 +88,9 @@ cd naive_sort && dotnet test NaiveSort.slnx
 
 # Data Structures Basics Tests
 cd data_structures_basics && dotnet test DataStructuresBasics.slnx
+
+# Data Structures Advanced Tests
+cd data_structures_advanced && dotnet test DataStructuresAdvanced.slnx
 ```
 
 ---
